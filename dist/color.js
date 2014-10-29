@@ -31,6 +31,22 @@ define(function() {
 		registerTint2Filter: function() {
 			throw "Not yet implemented";
 		},
+		lowContrast: function (outputSize, offset) {
+			offset = (typeof offset === 'undefined') ? 0 : offset;
+			if (outputSize + offset > this.colorWheelClasses.length) {
+				var result = [];
+				for (var colorClassIndex = 0; colorClassIndex < outputSize; colorClassIndex++) {
+					if (colorClassIndex < this.colorWheelClasses.length) {
+						result.push(this.colorWheelClasses[colorClassIndex]);
+					} else {
+						result.push(this.colorWheelClasses[this.colorWheelClasses.length - colorClassIndex]);
+					}
+				}
+				return result;
+			} else {
+				return this.colorWheelClasses.splice(offset, outputSize);
+			}
+		},
 		monochromatic: function (color, outputSize, darken) {
 			throw "Not yet implemented";
 		},
