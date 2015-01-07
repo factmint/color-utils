@@ -2,7 +2,7 @@
   "name": "color-utils",
   "version": "1.0.0",
   "description": "Factmint Color Utilities",
-  "main": "dist/color-utils.js",
+  "main": "dist/color.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
